@@ -6,30 +6,32 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
   {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
-    ],
+    title: "Home",
+    path: "/",
   },
   {
-    title: "Pricing",
-    path: "/pricing",
+    title: "The Technology",
+    path: "/technology",
   },
   {
-    title: "About",
-    path: "/about",
+    title: "Ethics & Morals",
+    path: "/blog/ethics-morals",
   },
   {
-    title: "Blog",
-    path: "/blog",
+    title: "Timeline",
+    path: "/timeline",
   },
   {
-    title: "Contact",
-    path: "/contact",
+    title: "Keywords",
+    path: "/keywords",
+  },
+  {
+    title: "Quiz",
+    path: "/quiz",
+  },
+  {
+    title: "References",
+    path: "/references",
   },
 ];
 ---
@@ -39,8 +41,8 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Astro</span><span
-            class="text-slate-500">ship</span
+          ><span class="font-bold text-slate-800">The Driverless</span><span
+            class="text-slate-500"> Dilemma</span
           >
         </a>
         <div class="block lg:hidden">
@@ -51,24 +53,14 @@ const menuitems = [
         <ul class="flex flex-col lg:flex-row lg:gap-3">
           {
             menuitems.map((item, index) => (
-              <>
-                {item.children && (
-                  <Dropdown
-                    title={item.title}
-                    children={item.children}
-                    lastItem={index === menuitems.length - 1}
-                  />
-                )}
-
-                {!item.children && (
-                  <li>
-                    <a
-                      href={item.path}
-                      class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
-                      {item.title}
-                    </a>
-                  </li>
-                )}
+              <> 
+                <li>
+                  <a
+                    href={item.path}
+                    class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+                    {item.title}
+                  </a>
+                </li>
               </>
             ))
           }
@@ -79,11 +71,5 @@ const menuitems = [
         </div>
       </MenuItems>
     </Astronav>
-    <div>
-      <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Log in</a>
-        <Link href="#" size="md">Sign up</Link>
-      </div>
-    </div>
   </header>
 </Container>

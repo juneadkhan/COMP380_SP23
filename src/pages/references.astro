@@ -1,0 +1,107 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "@astrojs/image/components";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const references = [
+  {
+    text:
+      "Goodall, Noah J. ‘Can You Program Ethics into a Self-Driving Car?’ IEEE Spectrum, vol. 53, no. 6, June 2016, pp. 28–58. ACM Digital Library, https://doi.org/10.1109/MSPEC.2016.7473149",
+    link: "https://doi.org/10.1109/MSPEC.2016.7473149",
+  },
+  {
+    text:
+      "Bonnefon, Jean-François, et al. ‘The Social Dilemma of Autonomous Vehicles’. Science, vol. 352, no. 6293, June 2016, pp. 1573–76. DOI.org (Crossref), https://doi.org/10.1126/science.aaf2654",
+    link: "https://doi.org/10.1126/science.aaf2654",
+  },
+  {
+    text:
+      "Hevelke, Alexander, and Julian Nida-Rümelin. ‘Responsibility for Crashes of Autonomous Vehicles: An Ethical Analysis’. Science and Engineering Ethics, vol. 21, no. 3, June 2015, pp. 619–30. PubMed, https://doi.org/10.1007/s11948-014-9565-5",
+    link: "https://doi.org/10.1007/s11948-014-9565-5",
+  },
+  {
+    text:
+      "‘Waypoint - The Official Waymo Blog: First Million Rider-Only Miles: How the Waymo Driver Is Improving Road Safety’. Waypoint – The Official Waymo Blog, https://blog.waymo.com/2023/02/first-million-rider-only-miles-how.html. Accessed 19 Apr. 2023.",
+    link: "https://blog.waymo.com/2023/02/first-million-rider-only-miles-how.html",
+  },
+  {
+    text:
+      "‘Self-Driving Cars: Everything You Need To Know’. Kelley Blue Book, 3 Mar. 2023, https://www.kbb.com/car-advice/self-driving-cars/.",
+    link: "https://www.kbb.com/car-advice/self-driving-cars/",
+  },
+  {
+    text:
+      "How Machine Learning in Automotive Makes Self-Driving Cars a Reality | Mindy Support Outsourcing. https://mindy-support.com/news-post/how-machine-learning-in-automotive-makes-self-driving-cars-a-reality/. Accessed 19 Apr. 2023.",
+    link: "https://mindy-support.com/news-post/how-machine-learning-in-automotive-makes-self-driving-cars-a-reality/",
+  },
+  {
+    text:
+      "Self-Driving Vehicles | One Hundred Year Study on Artificial Intelligence (AI100). https://ai100.stanford.edu/2016-report/section-ii-ai-domain/transportation/self-driving-vehicles. Accessed 8 May 2023.",
+    link: "https://ai100.stanford.edu/2016-report/section-ii-ai-domain/transportation/self-driving-vehicles",
+  },
+  {
+    text:
+      "‘How Do Self-Driving Cars Work? Everything You Need to Know’. Tom’s Guide, 11 Sept. 2022, https://www.tomsguide.com/reference/how-do-self-driving-cars-work-everything-you-need-to-know.",
+    link: "https://www.tomsguide.com/reference/how-do-self-driving-cars-work-everything-you-need-to-know",
+  },
+  {
+    text:
+      "SITNFlash. ‘Self-Driving Cars: The Technology, Risks and Possibilities’. Science in the News, 28 Aug. 2017, https://sitn.hms.harvard.edu/flash/2017/self-driving-cars-technology-risks-possibilities/.",
+    link: "https://sitn.hms.harvard.edu/flash/2017/self-driving-cars-technology-risks-possibilities/",
+  },
+  {
+    text:
+      "‘BLANK",
+    link: "https://blog.waymo.com/2023/02/first-million-rider-only-miles-how.html",
+  },
+  {
+    text:
+      "‘BLANK",
+    link: "https://blog.waymo.com/2023/02/first-million-rider-only-miles-how.html",
+  },
+  
+];
+---
+
+<style>
+  .reference:hover {
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.03);
+}
+</style>
+
+<Layout title="About">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">References</Fragment>
+      <Fragment slot="desc">MLA Style Citations</Fragment>
+    </Sectionhead>
+
+
+      <!-- Reference Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+
+        {
+          references.map((item, index) => (
+            <> 
+            <div class="reference bg-gray-200 rounded-lg" style="transition: width 0.5s ease;">
+              <div class="px-6 py-4">
+                <p class="text-gray-700 text-base">
+                  {item.text}
+                </p>
+              </div>
+              <div class="px-6 py-4">
+                <a href={item.link} class="text-blue-500 hover:text-blue-700">Link to Reference</a>
+              </div>
+            </div>
+            </>
+          ))
+        }
+      </div>
+
+  </Container>
+</Layout>

@@ -1,0 +1,115 @@
+---
+import { Icon } from "astro-icon";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Button from "@components/ui/button.astro";
+import Contactform from "@components/contactform.astro";
+---
+
+<Layout title="Contact">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Ethics & Morals</Fragment>
+      <Fragment slot="desc">Understanding the ethical and moral questions that we must address as a society as we usher in an age of Automation.</Fragment>
+    </Sectionhead>
+
+    
+    <div
+      class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-12 mt-6">
+      <p>
+        Autonomous vehicles (AVs) have the
+        potential to improve mobility, reduce traffic congestion, save fuel, and
+        prevent human errors that cause accidents. However, AVs also raise
+        ethical and moral questions that need to be addressed before they become
+        widely adopted.
+        
+        <br> <br>
+        One of the main ethical challenges of AVs is how they
+        should behave in unavoidable collision scenarios, also known as moral
+        dilemmas. These are situations where an AV has to choose between two or
+        more harmful outcomes, such as hitting a pedestrian or a cyclist,
+        swerving into another lane or a wall, or sacrificing its own passengers
+        or other drivers. 
+      </p>
+        <h3 class="text-lg font-bold mt-4 mb-2">How should an AV decide who to save and who to harm?</h3>
+      <p></p>
+
+        What criteria should it use to make such decisions? Who should be
+        responsible for programming these criteria and ensuring their fairness
+        and transparency? Some researchers have proposed using dilemmatic
+        frameworks, such as the trolley problem or the fat man problem, to test
+        and evaluate the moral reasoning of AVs.
+        
+        <div class="bg-gray-200 px-4 py-4 mt-4">
+          <div class="grid grid-cols-2 gap-4">
+
+            <div class="px-6">
+              <img
+              class="object-cover object-center h-full w-full"
+              width="500px"
+              src="https://integralaxis.files.wordpress.com/2017/09/trolley-problem.png"
+              alt="Illustration of the trolley problem"
+            />
+            <p class="text-sm text-gray-500">Source: Integral Axis</p>
+
+            </div>
+
+            <div class="px-4">
+              <p class="font-bold">
+                The Trolley Problem
+              </p>
+
+              <p class="mt-2">The trolley problem is a thought experiment in ethics. It asks whether you would divert a runaway trolley onto a different track to avoid killing five people on the current track, even if doing so would kill one person on the other track.</p>
+
+            </div>
+
+          </div>
+        </div>
+
+        <p class="mt-4">
+
+        
+        These are hypothetical scenarios where a person has to choose between killing one person or
+        several people by pulling a lever or pushing a button. An AV may have to decide
+        whether to prioritize its own passengers' comfort or the environment's
+        protection, whether to share its data with other vehicles or keep it
+        private, whether to follow the traffic rules strictly or bend them
+        slightly in some cases, or whether to respect the preferences of its
+        users or override them for their own good. These trade-offs require not
+        only technical solutions but also ethical deliberation and public
+        participation. AVs should not be seen as mere machines that follow
+        predefined rules but as moral agents that can act autonomously and
+        accountably. Therefore, they should be designed and regulated in a way
+        that reflects the moral values and norms of the society they operate in.
+        This means involving various stakeholders, such as manufacturers,
+        regulators, users, pedestrians, cyclists, and other drivers, in the
+        development and governance of AVs. It also means ensuring that AVs are
+        transparent, explainable, auditable, and adaptable to different contexts
+        and situations. The ethics and morals of AVs are not only theoretical
+        issues but also practical ones that affect how we live and interact with
+        these technologies. By addressing them proactively and collaboratively,
+        we can ensure that AVs serve the common good and respect human dignity.
+        ``` ```
+      </p>
+
+      <div
+        class="max-w-md mx-auto bg-white rounded-md overflow-hidden shadow-lg font">
+        <div class="relative">
+          <img
+            class="object-cover object-center h-full w-full"
+            src="https://edge.mcsw.net/mcsweeneys/zculq7fmfbt0pdj1g3wq7mu4u86a"
+            alt="Illustration of the trolley problem"
+          />
+          <div class="absolute top-0 left-0 p-4">
+            <span
+              class="bg-red-500 text-white font-medium py-1 px-2 rounded-full uppercase tracking-wide text-xs"
+              >Illustration</span
+            >
+            <p class="text-sm text-gray-500">Source: New York Magazine</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>

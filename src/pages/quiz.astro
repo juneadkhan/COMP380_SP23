@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "@astrojs/image/components";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+// Filter blog entries with 'draft: false' & date before current date
+const publishedBlogEntries = await getCollection("blog", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+
+// Sort content entries by publication date
+publishedBlogEntries.sort(function (a, b) {
+  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+});
+---
+
+<Layout title="Blog">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Quiz</Fragment>
+      <Fragment slot="desc">
+        Test your knowledge with our interactive quiz!
+      </Fragment>
+    </Sectionhead>
+    <main class="mt-16">
+      <div class="flex justify-center items-center">
+
+      <iframe name='proprofs' id='proprofs' width='70%' height='700px' src='https://www.proprofs.com/quiz-school/ugc/story.php?title=christmas-quiz-template_2806dq&id=3724487&ew=430' allow="camera *;microphone *;fullscreen;">
+      </iframe>
+      </div>
+    </main>
+  </Container>
+</Layout>

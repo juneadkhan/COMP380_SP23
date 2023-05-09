@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "@astrojs/image/components";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<Layout title="About">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Keywords</Fragment>
+      <Fragment slot="desc">Test your knowledge on keywords relating to Autonomous Vehicles.</Fragment>
+    </Sectionhead>
+
+    <div class="flex justify-center items-center">
+      <iframe width="795" height="690" src="https://www.educaplay.com/game/14699901-autonomous_vehicles.html"></iframe>    </div>
+  </Container>
+</Layout>
