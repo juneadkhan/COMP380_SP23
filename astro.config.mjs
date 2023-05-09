@@ -6,6 +6,7 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://juneadkhan.github.io/",
+  base: "/COMP380_SP23",
   integrations: [
     tailwind(),
     image({
